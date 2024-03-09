@@ -8,14 +8,14 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === "captureUrl") {
         
         const url = message.url;
-        const features = extractFeaturesFromUrl(url);
+        const features = featureExtractor(url);
         const label = predictLabel(features);
-        insertUrlAndLabelIntoMongoDB(url, label);
+        instertToMongo(url, label);
         sendResponse({ label: label });
     }
 });
 
-function extractFeaturesFromUrl(url) {
+function featureExtractor(url) {
     
     const parsedUrl = new URL(url);
     return [
@@ -38,7 +38,7 @@ function predictLabel(features) {
     const label = model.predict([features])[0];
     return label;
 }
-function insertUrlAndLabelIntoMongoDB(url, label) { 
+function insertToMongo(url, label) { 
     const client = new MongoClient('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true });
     client.connect(err => {
         if (err) {
