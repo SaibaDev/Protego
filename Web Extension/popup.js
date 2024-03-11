@@ -23,9 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     function startCapture() {
         chrome.runtime.sendMessage({action: "startCapture"});
+        toggleButton.style.backgroundColor='#FF0000';
+        toggleButton.style.transition='.5s ease';
+
     }
     function stopCapture() {
         chrome.runtime.sendMessage({action: "stopCapture"});
+        toggleButton.style.backgroundColor='#008000';
+        toggleButton.style.transition='.5s ease';
     }
     chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         if (message.action === "prediction") {

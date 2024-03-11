@@ -1,0 +1,7 @@
+How to run the webextension:
+--
+1. Open Web Browser
+2. Click on extension icon then manage extensions
+3. Enable developer mode
+4. Load unpacked folder
+5. Open the extension.
