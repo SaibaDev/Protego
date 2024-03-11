@@ -13,6 +13,7 @@ body {
     margin: 0 auto;
     padding: 20px;
     min-width: 300px;
+    max-height: 500px;
 }
 #toggleCapture {
     padding: 10px 20px;
@@ -69,10 +70,10 @@ table {
     border-collapse: collapse; 
 }
 table th {
-    border: 1px solid white;
-    padding: 8px;
+    border:1px solid white;
+    padding: 5px;
 }
 table td {
-    border: 1px solid white;
+    border: none;
     padding: 8px;
 }
