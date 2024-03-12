@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.getElementById('toggleCapture');
-    const predictionDisplay = document.getElementById('prediction');
+   // const predictionDisplay = document.getElementById('prediction');
 
     chrome.storage.local.get('captureEnabled', (data) => {
         const captureEnabled = data.captureEnabled || false;
         updateToggleButton(captureEnabled);
     });
+
     toggleButton.addEventListener('click', () => {
         chrome.storage.local.get('captureEnabled', (data) => {
             const captureEnabled = !data.captureEnabled;
@@ -32,10 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleButton.style.backgroundColor='#008000';
         toggleButton.style.transition='.5s ease';
     }
-    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    /*chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         if (message.action === "prediction") {
             const prediction = message.prediction;
             predictionDisplay.innerText = `Prediction: ${prediction}`;
         }
-    });
+    });*/
 });
