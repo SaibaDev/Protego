@@ -15,7 +15,7 @@ body {
     min-width: 300px;
     max-height: 500px;
 }
-#toggleCapture {
+#captureButton {
     padding: 10px 20px;
     margin: 20px 0;
     border: none;
@@ -25,8 +25,10 @@ body {
     cursor: pointer; 
 }
 
-#toggleCapture:hover {
-    background-color: #ddd; 
+#captureButton:hover {
+
+    background-color: #a1a0a0; 
+    transition: ease;
 }
 .header {
     margin-bottom: 20px;

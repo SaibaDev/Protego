@@ -9,35 +9,33 @@
     <div class="header">
       <img class="logo" src="logo.png">
       <h2>Protego URL analysis tool</h2>
-      <p> Activate protego to shield yourself against scam and fradulent links </p>
+      <p> Activate protego to shield yourself against scam and fraudulent links </p>
     </div>
     <hr>
-      <table id="recentURLs">
+    <table id="recentURLs">
       <thead>
         <tr>
-            <th>Recent URLs</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tbody>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-          </tbody>
-        </tbody>
-      </table>
-    <h3 id="URLresult"></h3>
-    <p id="prediction"></p>
+          <th>Recent URLs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table body content will be dynamically populated -->
+      </tbody>
+    </table>
+    
+    <p id="predictionText"></p>
 
-    <button id="toggleCapture">Activate Capture</button>
+    <!-- Add the captureButton element -->
+    <button id="captureButton">Capture URL</button>
+    
+    <!-- Add the sendDataButton element -->
+    <button id="sendDataButton">Send Data to Flask Backend</button>
 
     <div class="footer">
       <p> For more information visit our website:  <a href="#"><img src="logo2.png" alt="Website Icon"></p> </a>
     </div>
 
   </div>
-    <script src="popup.js"></script>
+  <script src="popup.js"></script>
 </body>
 </html>

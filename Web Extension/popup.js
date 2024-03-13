@@ -1,46 +1,60 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var toggleButton = document.getElementById('toggleCapture');
-   // var predictionDisplay = document.getElementById('prediction');
+    console.log("Popup script loaded");
 
-    chrome.storage.local.get('captureEnabled', function(data) {
-        var captureEnabled = data.captureEnabled || false;
-        updateToggleButton(captureEnabled);
-    });
+    var captureButton = document.getElementById('captureButton');
+    var predictionText = document.getElementById('predictionText');
+    var recentURLsTable = document.getElementById('recentURLs').getElementsByTagName('tbody')[0];
+    var capturedURLs = JSON.parse(localStorage.getItem('capturedURLs')) || [];
 
-    toggleButton.addEventListener('click', function() {
-        chrome.storage.local.get('captureEnabled', function(data) {
-            var captureEnabled = !data.captureEnabled;
-            chrome.storage.local.set({'captureEnabled': captureEnabled});
-            updateToggleButton(captureEnabled);
+    captureButton.addEventListener('click', function() {
+        chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+            const currentTab = tabs[0];
+            const url = currentTab.url;
+            console.log("Current tab URL:", url);
+            fetch('http://127.0.0.1:5000/process_url', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    url: url
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Prediction result:", data.prediction);
+                predictionText.textContent = "Prediction: " + data.prediction;
+                capturedURLs.push({url: url, prediction: data.prediction}); 
+                localStorage.setItem('capturedURLs', JSON.stringify(capturedURLs)); 
+                updateRecentURLs(url, data.prediction); 
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         });
     });
-    
-    function updateToggleButton(captureEnabled) {
-        if (captureEnabled) {
-            toggleButton.innerText = 'Deactivate Capture';
-            startCapture();
-        } else {
-            toggleButton.innerText = 'Activate Capture';
-            stopCapture();
-        }
-    }
-    
-    function startCapture() {
-        chrome.runtime.sendMessage({action: "startCapture"});
-        toggleButton.style.backgroundColor='#FF0000';
-        toggleButton.style.transition='.5s ease';
 
+    capturedURLs.forEach(function(urlObj) {
+        updateRecentURLs(urlObj.url, urlObj.prediction);
+    });
+
+    // update
+    function updateRecentURLs(url, prediction) {
+        var newRow = recentURLsTable.insertRow(0);
+        var urlCell = newRow.insertCell(0);
+        urlCell.textContent = url;
+        var predictionCell = newRow.insertCell(1);
+        predictionCell.textContent = prediction;
+        var removeCell = newRow.insertCell(2);
+        var removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.addEventListener('click', function() {
+            var row = this.parentNode.parentNode;
+            var index = Array.from(row.parentNode.children).indexOf(row);
+            capturedURLs.splice(index, 1);
+            localStorage.setItem('capturedURLs', JSON.stringify(capturedURLs));
+            row.parentNode.removeChild(row);
+        });
+        removeCell.appendChild(removeButton);
     }
-    
-    function stopCapture() {
-        chrome.runtime.sendMessage({action: "stopCapture"});
-        toggleButton.style.backgroundColor='#008000';
-        toggleButton.style.transition='.5s ease';
-    }
-    /*chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
-        if (message.action === "prediction") {
-            var prediction = message.prediction;
-            predictionDisplay.innerText = 'Prediction: ' + prediction;
-        }
-    });*/
 });
