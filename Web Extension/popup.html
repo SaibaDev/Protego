@@ -16,25 +16,21 @@
       <thead>
         <tr>
           <th>Recent URLs</th>
+          <th>Prediction</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- Table body content will be dynamically populated -->
-      </tbody>
+      <tbody></tbody>
     </table>
-    
-    <p id="predictionText"></p>
 
-    <!-- Add the captureButton element -->
-    <button id="captureButton">Capture URL</button>
-    
-    <!-- Add the sendDataButton element -->
-    <button id="sendDataButton">Send Data to Flask Backend</button>
-
-    <div class="footer">
-      <p> For more information visit our website:  <a href="#"><img src="logo2.png" alt="Website Icon"></p> </a>
+    <div class="button-container">
+      <button id="captureButton">Analyze URL</button>
+      <button id="removeAllButton">Remove All</button>
     </div>
-
+    <div id="predictionContainer"></div>
+    
+    <div class="footer">
+      <p> For more information visit our website:  <a href="#"><img src="logo2.png" alt="Website Icon"></a></p>
+    </div>
   </div>
   <script src="popup.js"></script>
 </body>
