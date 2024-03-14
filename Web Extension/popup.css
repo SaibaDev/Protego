@@ -1,4 +1,3 @@
-
 *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -6,30 +5,20 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #0F172A;
+    
     color: white;
+    overflow: hidden;
 }
+
 .content {
     text-align: center;
     margin: 0 auto;
     padding: 20px;
     min-width: 300px;
     max-height: 500px;
-}
-#captureButton {
-    padding: 10px 20px;
-    margin: 20px 0;
-    border: none;
-    border-radius: 10px;
-    background-color: white;
-    color: black;
-    cursor: pointer; 
+    overflow-y: auto; 
 }
 
-#captureButton:hover {
-
-    background-color: #a1a0a0; 
-    transition: ease;
-}
 .header {
     margin-bottom: 20px;
 }
@@ -44,38 +33,91 @@ h2 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
 p {
     margin-top: 10px;
 }
+
 hr {
     border: none;
     border-top: 1px solid white;
     margin: 20px auto;
 }
+
 .footer {
     margin-top: 20px;
 }
 
-
 .footer hr {
     width: 50%;
 }
+
 .footer img {
     vertical-align: middle;
     width: 100px;
     height: 100px;
     margin-left: 5px;
 }
+
 table {
     width: 100%;
     border-collapse: collapse; 
 }
+
 table th {
-    border:1px solid white;
+    border: 1px solid white;
     padding: 5px;
+    max-width: 200px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
 }
+
 table td {
     border: none;
     padding: 8px;
+    max-width: 200px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap; /
+}
+
+#captureButton{
+    position: fixed;
+    bottom: 20px; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    cursor: pointer; 
+    z-index: 1; 
+}
+
+#removeAllButton {
+    position: fixed;
+    bottom: 20px; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
+    cursor: pointer; 
+    z-index: 1; 
+}
+
+#captureButton {
+    left: calc(50% - 130px); 
+}
+
+#removeAllButton {
+    left: calc(50% + 20px); 
+}
+
+#captureButton:hover {
+    background-color: #a1a0a0; 
+    transition: ease;
+}
+
+#removeAllButton:hover {
+    background-color: #6b0000;
 }
