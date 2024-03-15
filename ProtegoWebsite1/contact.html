@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Protego: Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-Poppins bg-[#0F172A] overflow-x-hidden">
+    <Header class="bg-gray-900 p-3">
+        <div class="flex justify-between items-center">
+            <div class="flex-shrink-0">
+                <img class="h-8 ml-4" src="./imgs/logo-protego.png" alt="Logo">
+            </div>
+            <div class="block lg:hidden">
+                <button id="menu-toggle" class="text-gray-300 focus:outline-none">
+                    <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                        <path v-if="!isOpen" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+                        <path v-else fill-rule="evenodd" clip-rule="evenodd"
+                            d="M3 4.5h18v2H3v-2zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="lg:flex lg:flex-grow lg:justify-center lg:items-center hidden">
+                <a href="./page.html"
+                    class="text-gray-300 hover:bg-gray-700 px-4 py-2 rounded-md text-sm font-medium">Home</a>
+                <a href="#"
+                    class="text-gray-300 hover:bg-gray-700 px-4 py-2 rounded-md text-sm font-medium">Documentation</a>
+                <a href="./about.html"
+                    class="text-gray-300 hover:bg-gray-700 px-4 py-2 rounded-md text-sm font-medium">About
+                    Us</a>
+                <a href="./contact.html"
+                    class="text-gray-300 hover:bg-gray-700 block px-4 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+
+        <div class="hidden lg:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="./page.html"
+                    class="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#"
+                    class="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Documentation</a>
+                <a href="./about.html"
+                    class="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">About
+                    Us</a>
+                <a href="./contact.html"
+                    class="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </Header>
+
+    <section>
+        <h2 class="text-center text-4xl font-semibold mt-10 tex">Contact US for more information</h2>
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-40 mx-10 mt-20">
+            <div class="text-lg">
+                <div class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20">
+                        <path
+                            d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                    </svg>
+                    <h4 class="w-40">Contact Number:</h4>
+                    <span>+6939150119314</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20">
+                        <path
+                            d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+                    </svg>
+                    <h4 class="w-40">Email:</h4>
+                    <span>tolledo.syberblaise.bscs2020@gmail.com</span>
+                </div>
+            </div>
+        
+            <img src="./imgs/contactUs.jpg" alt="contactUs" class="w-96 rounded-lg">
+        </div>
+    </section>
+</body>
+
+</html>
