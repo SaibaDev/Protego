@@ -4,6 +4,8 @@ from pymongo import MongoClient
 
 
 # Todo mag-add ng additional features para mas maging accurate
+# Change features later
+
 def extract_features_from_url(url):
     parsed_url = urlparse(url)
     return [
