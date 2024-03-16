@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("Popup script loaded");
+    console.log("Popup script loaded");    
+
+    //Problem: ML model produces prediction but NOT accurate.
+    // Adjust features and Dataset during machine learning training
+    //Add thirdparty- URL detection API to produce more accurate result
 
     var captureButton = document.getElementById('captureButton');
     var predictionText = document.getElementById('predictionText');
