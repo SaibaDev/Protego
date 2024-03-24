@@ -5,32 +5,40 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
+  <div class="navbar">
+    <img src="protego2.png" class="logo" alt="Logo">
+  </div>
+
   <div class="content">
     <div class="header">
-      <img class="logo" src="logo.png">
-      <h2>Protego URL analysis tool</h2>
-      <p> Activate protego to shield yourself against scam and fraudulent links </p>
+      
+      <h2>Protego URL analysis</h2>
+      <p> Analyze the URL of your current active tab</p>
     </div>
     <hr>
     <table id="recentURLs">
       <thead>
         <tr>
-          <th>Recent URLs</th>
+          <th>Captured URLs</th>
           <th>Prediction</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+       
+      </tbody>
     </table>
 
-    <div class="button-container">
-      <button id="captureButton">Analyze URL</button>
-      <button id="removeAllButton">Remove All</button>
-    </div>
+      <div class="button-container">
+      <button id="toggleButton">Toggle Capture</button>
+      <button id="removeAllButton">Remove All</button> 
+      </div>
+
     <div id="predictionContainer"></div>
     
-    <div class="footer">
-      <p> For more information visit our website:  <a href="#"><img src="logo2.png" alt="Website Icon"></a></p>
-    </div>
+    
   </div>
   <script src="popup.js"></script>
 </body>
