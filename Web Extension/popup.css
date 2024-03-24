@@ -3,11 +3,25 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0F172A;
-    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #0F172A, #1C2341);
     color: white;
-    overflow: hidden;
+}
+
+.navbar {
+    background-color: black;
+    height: 50px; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
 }
 
 .content {
@@ -15,17 +29,14 @@ body {
     margin: 0 auto;
     padding: 20px;
     min-width: 300px;
-    max-height: 500px;
-    overflow-y: auto; 
+    height: 500px; 
+    position: relative;
+    overflow: hidden; 
 }
 
 .header {
+    position: relative;
     margin-bottom: 20px;
-}
-
-.logo {
-    width: 100px;
-    height: 100px;
 }
 
 h2 {
@@ -43,81 +54,74 @@ hr {
     margin: 20px auto;
 }
 
-.footer {
-    margin-top: 20px;
-}
-
-.footer hr {
-    width: 50%;
-}
-
-.footer img {
-    vertical-align: middle;
-    width: 100px;
-    height: 100px;
-    margin-left: 5px;
-}
-
 table {
-    width: 100%;
-    border-collapse: collapse; 
+    width: 300px;
+    height: 200px;
+    border-collapse: collapse;
+    background-color: white;
+    color: black;
+    margin-bottom: 10px; 
 }
 
 table th {
     border: 1px solid white;
     padding: 5px;
-    max-width: 200px; 
+    max-width: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 table td {
     border: none;
-    padding: 8px;
-    max-width: 200px; 
+    padding: 5px;
+    max-width: 200px;
     overflow: hidden;
-    text-overflow: ellipsis; 
-    white-space: nowrap; /
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-#captureButton{
-    position: fixed;
-    bottom: 20px; 
+.button-container {
+    position: relative;
+}
+
+
+#removeAllButton {
     padding: 10px 20px;
     border: none;
     border-radius: 10px;
-    background-color: white;
     color: rgb(0, 0, 0);
-    cursor: pointer; 
-    z-index: 1; 
+    cursor: pointer;
+    width: 150px; 
+    margin: 0 10px; 
+}
+
+#toggleButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    width: 150px; 
+    margin: 10px 10px; 
+}
+
+
+
+#toggleButton {
+    background-color: green;
 }
 
 #removeAllButton {
-    position: fixed;
-    bottom: 20px; 
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
     background-color: rgb(255, 0, 0);
-    color: rgb(0, 0, 0);
-    cursor: pointer; 
-    z-index: 1; 
 }
 
-#captureButton {
-    left: calc(50% - 130px); 
-}
-
-#removeAllButton {
-    left: calc(50% + 20px); 
-}
-
-#captureButton:hover {
-    background-color: #a1a0a0; 
+#toggleButton:hover {
+    background-color: #a1a0a0;
     transition: ease;
 }
 
 #removeAllButton:hover {
     background-color: #6b0000;
+    transition: ease;
 }
