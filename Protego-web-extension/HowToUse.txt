@@ -1,0 +1,13 @@
+1. Download Protego-web-extension folder
+2. Open Chrome browser
+3. Go to extensions, then enable DEVELOPER MODE
+4. Load unpacked and locate the PROTEGO folder
+5. Open protego in extensions, DONE.
+
+Solothesis.txt
+✓ Webpage (Deployed) 
+✓ Web Extension (To be published)
+✓ Flask-MongoDB backend  (Deployed, In private repo)
+✓ Data collection, Feature engineering and Model Training (RF SVM  in SKLearn)
+✓ Network-attached storage , Remote access via VPN. 
+
